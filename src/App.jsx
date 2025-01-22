@@ -1,11 +1,16 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-//import './App.css'
-import Pokedex from './Pokedex';
+import './Pokedex.css'
+import PokemonPic from './PokemonPic.jsx'
+import Pokedex from './Pokedex.jsx';
 
 function App() {
-  return <Pokedex />
+  return (
+    <div >
+      <Pokedex />
+    </div>
+  )
 }
 
 export default App
