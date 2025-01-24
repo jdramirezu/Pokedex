@@ -6,12 +6,21 @@ import PokemonPic from './PokemonPic.jsx'
 import Pokedex from './Pokedex.jsx';
 
 function App() {
-
-  return (
+  const [pokemon, setPokemon] = useState();
+      
+  useEffect( () => {
+    fetch('https://pokeapi.co/api/v2/pokemon/25/')
+    .then(response => response.json())
+    .then(data => setPokemon(data));
+  },[]);
+  
+  return !pokemon ?
+    <h1>Loading</h1> :
+    (
       <div >
-        <Pokedex />
+        <Pokedex pokemon = {pokemon}/>
       </div>
     );
 }
 
-export default App
+export default App;

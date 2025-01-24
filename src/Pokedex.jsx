@@ -4,13 +4,20 @@ import PokemonPic from './PokemonPic.jsx'
 import './Pokedex.css'
 import PokeInfo from './PokeInfo.jsx';
 
-const Pokedex = () =>{
+const Pokedex = ({pokemon}) =>{
     return (
         <div >
             <img src={PokedexImg} className="PokedexImg"/>
             <div>
-                <PokemonPic id={25} />
-                <PokeInfo id = {25}/>
+                <PokemonPic id={pokemon.id} />
+                <PokeInfo
+                    key = {pokemon.id}
+                    id = {pokemon.id}
+                    name = {pokemon.name}
+                    weight = {pokemon.weight}
+                    height = {pokemon.height}
+                    type = {pokemon.types["0"].type.name}                
+                />
             </div>
         </div>
     );
